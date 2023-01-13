@@ -1,7 +1,7 @@
 # Índice das Aulas Javascript Básico
-📄 Link de acesso aos <a href="https://www.notion.so/Javascript-B-sico-72e0f87d21f44079b5af798419f857a2">resumos</a>. 
+📄 Link de acesso aos <a href="https://cord-delivery-7eb.notion.site/React-Avan-ado-0dd7bebfaf364c1f8544098923b060e5">resumos</a>. 
 
-🖼 Link de acesso a <a href="https://jonathanbenedito.github.io/modulo-basico-javascript/">página</a>.
+🖼 Link de acesso a <a href="https://jonathanbenedito.github.io/modulo-react-avancado/">página</a>.
 
 <!-- TABLE OF CONTENTS -->
 ## Conteúdo
