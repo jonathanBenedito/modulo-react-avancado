@@ -15,6 +15,9 @@
     <li>
         <a href="#aula-03---hooks">Aula 03 - Hooks</a>
     </li>
+    <li>
+        <a href="#aula-04---renderização-condicional">Aula 04 - Renderização Condicional</a>
+    </li>
 </ul>
 
 ## Aula 01 - Estado no React
@@ -159,3 +162,23 @@ export default DeckOfCards
         fetchData()
     }, [])
     ```
+
+## Aula 04 - Renderização Condicional
+
+É simplesmente usar condições como `if` ou operador condicional para renderizar elementos de acordo com seu estado atual.
+
+```jsx
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <button>LogOut</button>;
+  }
+  return <button>LogIn</button>;
+}
+
+return (
+  // Try changing to isLoggedIn={true}:
+  <Greeting isLoggedIn={false} />,
+  document.getElementById('root')
+);
+```
