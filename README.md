@@ -18,6 +18,9 @@
     <li>
         <a href="#aula-04---renderização-condicional">Aula 04 - Renderização Condicional</a>
     </li>
+    <li>
+        <a href="#aula-05---formulários-no-react">Aula 05 - Formulários no React</a>
+    </li>
 </ul>
 
 ## Aula 01 - Estado no React
@@ -181,4 +184,40 @@ return (
   <Greeting isLoggedIn={false} />,
   document.getElementById('root')
 );
+```
+
+## Aula 05 - Formulários no React
+
+- `onChange` → É um evento que executa uma função toda vez que seu valor for alterado, isso geralmente é utilizado em formulários para atualizar e registrar o valor do input.
+- `onSubmit` → É um evento que executa uma função quando um usuário envia um formulário através do botão de submit, comumente usado com hooks.
+```jsx
+const Form = (props) => {
+
+    const [inputs, setInputs] = useState({
+        image: ''
+    })
+
+    const handleInputChange = (event) => {
+        setInputs({
+            image: event.target.value
+        })
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        props.addCard(inputs)
+    }
+
+    return (
+        <>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label htmlFor='image'>Endereço da imagem da carta</label>
+                    <input type="text" id="image" name="image" onChange={handleInputChange} value={inputs.image}/>
+                </div>
+                <input type="submit" />
+            </form>
+        </>
+    )
+}
 ```
