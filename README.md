@@ -9,8 +9,11 @@
     <li>
         <a href="#aula-01---estado-no-react">Aula 01 - Estado no React</a>
     </li>
-        <li>
+    <li>
         <a href="#aula-02---ciclos-de-vida">Aula 02 - Ciclos de Vida</a>
+    </li>
+    <li>
+        <a href="#aula-03---hooks">Aula 03 - Hooks</a>
     </li>
 </ul>
 
@@ -96,3 +99,63 @@ class DeckOfCards extends Component {
 
 export default DeckOfCards
 ```
+
+## Aula 03 - Hooks
+- `useState()`
+    
+    Usando estado dentro de **componente de classe**.
+    
+    ```jsx
+    class DeckOfCards extends Component {
+        constructor(){
+            super()
+            this.state = {
+                cards: []
+            }
+        }
+    
+        async componentDidMount(){
+            const deckId = await createDeck()
+            const data = await getCards(deckId)
+    
+            this.setState({
+                cards: data.cards
+            })
+        }
+    ```
+    
+    Usando estado dentro de **componente de função**.
+    
+    ```jsx
+    function Example() {
+    
+    const [count, setCount] = useState(0)
+    
+    return (
+    	<div>
+    		<p>You clicked {count} times</p>
+    		<button onClick={() => setCount(count + 1)}>
+    			Click me
+    		</button>
+    	</div>
+    )
+    
+    ```
+    
+- `useEffect()`
+    
+    Permite você usar efeitos colaterais nos componentes de funções.
+    
+    ```jsx
+    useEffect(() => {
+        const fetchData = async () => {
+            const deckId = await createDeck()
+            const data = await getCards(deckId)
+    
+            setDeck({
+                cards: data.cards
+            })
+        }
+        fetchData()
+    }, [])
+    ```
